@@ -21,7 +21,7 @@ android {
 
     buildTypes {
         debug{
-            buildConfigField "String", "BASE_URL", "\"ttps://api.dictionaryapi.dev/api/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.dictionaryapi.dev/\""
         }
         release {
             minifyEnabled false
@@ -53,6 +53,15 @@ dependencies {
 
     //RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //VieBinding
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.6'
+
+    //koin
+    implementation "org.koin:koin-android:2.0.1"
+    implementation "org.koin:koin-androidx-scope:2.0.1"
+    implementation "org.koin:koin-androidx-viewmodel:2.0.1"
+
     //Rx
     implementation "io.reactivex.rxjava2:rxjava:2.2.20"
     implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
@@ -68,6 +77,8 @@ dependencies {
     //Serialisation
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
     implementation "com.google.code.gson:gson:2.8.6"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     //Room
     def room_version = "2.3.0"
