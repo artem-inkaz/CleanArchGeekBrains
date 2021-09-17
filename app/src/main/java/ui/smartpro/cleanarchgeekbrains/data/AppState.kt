@@ -1,6 +1,4 @@
-package ui.smartpro.cleanarchgeekbrains.common
-
-import ui.smartpro.cleanarchgeekbrains.data.ResponseItem
+package ui.smartpro.cleanarchgeekbrains.data
 
 sealed class AppState {
     data class Success(val data: List<ResponseItem>?) : AppState()
