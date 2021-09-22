@@ -1,44 +1,41 @@
 package ui.smartpro.cleanarchgeekbrains.ui.translate
 
 import androidx.lifecycle.LiveData
-import io.reactivex.observers.DisposableObserver
-import io.reactivex.rxkotlin.plusAssign
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import ui.smartpro.cleanarchgeekbrains.common.BaseViewModel
 import ui.smartpro.cleanarchgeekbrains.data.AppState
+import ui.smartpro.cleanarchgeekbrains.utils.parseSearchResults
 
 class TranslateViewModel(
-        private val interactor: Interactor
-):BaseViewModel<AppState>() {
+    private val interactor: Interactor
+) : BaseViewModel<AppState>() {
 
-    private var appState: AppState? = null
+    private val liveData: LiveData<AppState> = _mutableLiveData
 
-    override fun getData(word: String, isOnline: Boolean): LiveData<AppState> {
-        compositeDisposable +=
-                interactor
-                        .getData(word,isOnline)
-                        .subscribeOn(schedulers.background())
-                        .observeOn(schedulers.main())
-                        .subscribeOn(schedulers.background())
-                        .doOnSubscribe{liveDataForViewToObserve.value= AppState.Loading(null)}
-                        .subscribeWith(getObserver())
-
-        return super.getData(word, isOnline)
+    fun subscribe(): LiveData<AppState> {
+        return liveData
     }
 
-    private fun getObserver(): DisposableObserver<AppState> {
-        return object : DisposableObserver<AppState>() {
+    override fun getData(word: String, isOnline: Boolean) {
+        _mutableLiveData.value = AppState.Loading(null)
+        cancelJob()
+        viewModelCoroutineScope.launch { startInteractor(word, isOnline) }
+    }
 
-            override fun onNext(state: AppState) {
-                appState = state
-                liveDataForViewToObserve.value = state
-            }
-
-            override fun onError(e: Throwable) {
-                liveDataForViewToObserve.value = AppState.Error(e)
-            }
-
-            override fun onComplete() {
-            }
+    private suspend fun startInteractor(word: String, isOnline: Boolean) =
+        withContext(Dispatchers.IO) {
+            _mutableLiveData.postValue(parseSearchResults(interactor.getTranslate(word, isOnline)))
         }
+
+    override fun handleError(error: Throwable) {
+        _mutableLiveData.postValue(AppState.Error(error))
     }
+
+    override fun onCleared() {
+        _mutableLiveData.value = AppState.Success(null)
+        super.onCleared()
+    }
+
 }

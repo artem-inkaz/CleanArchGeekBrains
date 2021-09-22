@@ -17,7 +17,7 @@ import ui.smartpro.cleanarchgeekbrains.data.ResponseItem
 import ui.smartpro.cleanarchgeekbrains.databinding.FragmentTranslateBinding
 
 class TranslateFragment : BaseFragment<AppState>(),
-        WordsAdapter.Delegate {
+    WordsAdapter.Delegate {
 
     private val viewBinding: FragmentTranslateBinding by viewBinding()
     private val adapterDictionary = WordsAdapter(delegate = null)
@@ -26,8 +26,8 @@ class TranslateFragment : BaseFragment<AppState>(),
     private val observer = Observer<AppState> { renderData(it) }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?,
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_translate, container, false)
@@ -45,14 +45,16 @@ class TranslateFragment : BaseFragment<AppState>(),
         viewBinding.ivSend.setOnClickListener {
             if (originalText.toString().trim().isNotEmpty()) {
                 Toast.makeText(context, originalText, Toast.LENGTH_SHORT)
-                        .show()
-                vm.getData(originalText.toString().trim(), true).observe(viewLifecycleOwner, observer)
+                    .show()
+                vm.getData(originalText.toString().trim(), true)
 
             } else {
                 Toast.makeText(context, getString(R.string.error_empty_field), Toast.LENGTH_SHORT)
-                        .show()
+                    .show()
             }
         }
+
+        setObservers()
     }
 
     override fun onWordPicked(user: ResponseItem) {
@@ -70,15 +72,26 @@ class TranslateFragment : BaseFragment<AppState>(),
                     adapterDictionary.submitList(data)
                 }
             }
-            is AppState.Loading -> {showViewLoading()}
-            is AppState.Error -> {showErrorScreen(appState.error.message)}
+            is AppState.Loading -> {
+                showViewLoading()
+            }
+            is AppState.Error -> {
+                showErrorScreen(appState.error.message)
+            }
         }
     }
+
+    private fun setObservers() {
+        vm.subscribe().observe(viewLifecycleOwner, {
+            renderData(it)
+        })
+    }
+
 
     private fun showErrorScreen(error: String?) {
         showViewError()
         Toast.makeText(context, error, Toast.LENGTH_LONG).show()
-        vm.getData("error", true).observe(this, observer)
+        vm.getData("error", true)
     }
 
     private fun showViewSuccess(words: List<ResponseItem>) {

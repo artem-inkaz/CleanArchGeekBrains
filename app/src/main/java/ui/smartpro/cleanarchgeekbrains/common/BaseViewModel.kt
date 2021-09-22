@@ -1,31 +1,31 @@
 package ui.smartpro.cleanarchgeekbrains.common
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
+import kotlinx.coroutines.*
 import org.koin.core.KoinComponent
 import ui.smartpro.cleanarchgeekbrains.data.AppState
-import ui.smartpro.geekbrainskursovoimvp.scheduler.DefaultSchedulers
 
 abstract class BaseViewModel<T : AppState>(
-        protected val liveDataForViewToObserve: MutableLiveData<T> = MutableLiveData(),
-        protected val compositeDisposable: CompositeDisposable = CompositeDisposable(),
-        protected val schedulers: DefaultSchedulers = DefaultSchedulers()
+        protected open val _mutableLiveData: MutableLiveData<T> = MutableLiveData(),
 ) : ViewModel(), KoinComponent {
 
-//    private val compositeDisposable = CompositeDisposable()
+    abstract fun getData(word: String, isOnline: Boolean)
 
-    open fun getData(word: String, isOnline: Boolean): LiveData<T> = liveDataForViewToObserve
+    protected val viewModelCoroutineScope = CoroutineScope(
+        Dispatchers.Main
+                + SupervisorJob()
+                + CoroutineExceptionHandler { _, throwable ->
+            handleError(throwable)
+        })
 
-    protected fun Disposable.disposeOnCleared(): Disposable {
-        compositeDisposable.add(this)
-        return compositeDisposable
+    protected fun cancelJob() {
+        viewModelCoroutineScope.coroutineContext.cancelChildren()
     }
+    abstract fun handleError(error: Throwable)
 
     override fun onCleared() {
         super.onCleared()
-        compositeDisposable.clear()
+        cancelJob()
     }
 }
