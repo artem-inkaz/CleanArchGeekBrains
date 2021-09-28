@@ -1,4 +1,4 @@
-package ui.smartpro.cleanarchgeekbrains.data
+package ui.smartpro.cleanarchgeekbrains.model.data
 
 import com.google.gson.annotations.SerializedName
 

@@ -12,22 +12,22 @@ import ui.smartpro.cleanarchgeekbrains.BuildConfig
 object RetrofitModule {
 
     private val gson: Gson =
-        GsonBuilder()
-            .create()
+            GsonBuilder()
+                    .create()
 
     fun create(): Api =
-        Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
-            .client(
-                OkHttpClient.Builder()
-                    .addInterceptor(ApiInterceptor)
-                    .addInterceptor(HttpLoggingInterceptor().apply {
-                        level = HttpLoggingInterceptor.Level.BODY
-                    })
+            Retrofit.Builder()
+                    .baseUrl(BuildConfig.BASE_URL)
+                    .client(
+                            OkHttpClient.Builder()
+                                    .addInterceptor(ApiInterceptor)
+                                    .addInterceptor(HttpLoggingInterceptor().apply {
+                                        level = HttpLoggingInterceptor.Level.BODY
+                                    })
+                                    .build()
+                    )
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build()
-            )
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .build()
-            .create(Api::class.java)
+                    .create(Api::class.java)
 }

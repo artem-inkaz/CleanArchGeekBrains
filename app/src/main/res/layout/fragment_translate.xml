@@ -22,7 +22,7 @@
         android:id="@+id/et_text"
         android:layout_width="@dimen/base_width"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorButtonNormal"
         android:minHeight="@dimen/min_height_edit_text"
         android:paddingHorizontal="@dimen/padding_horizontal"
         android:paddingVertical="@dimen/padding_vertical"
