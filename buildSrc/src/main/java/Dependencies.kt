@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Config {
-    const val kotlin_version = "1.4.21"
+//    const val kotlin_version = "1.4.21"
     const val application_id = "ui.smartpro.cleanarchgeekbrains"
     const val compile_sdk = 30
     const val min_sdk = 21
@@ -14,6 +14,15 @@ object Config {
 object Releases {
     const val version_code = 1
     const val version_name = "1.0"
+}
+
+object Modules {
+    const val app = ":app"
+    const val core = ":core"
+    const val model = ":model"
+    const val repository = ":repository"
+    const val utils = ":utils"
+    const val translate = ":translate"
 }
 
 object Versions {
@@ -42,7 +51,7 @@ object Versions {
 
     //Retrofit
     const val retrofit = "2.9.0"
-    const val converterGson = "2.8.6"
+    const val converterGson = "2.6.0"
     const val loggingInterceptor = "4.9.1"
     const val adapterCoroutines = "0.9.2"
     const val adapterRxJava2 = "2.9.0"

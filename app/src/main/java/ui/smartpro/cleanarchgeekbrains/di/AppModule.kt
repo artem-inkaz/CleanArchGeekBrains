@@ -7,8 +7,8 @@ import ui.smartpro.cleanarchgeekbrains.model.repository.RepositoryImplementation
 import ui.smartpro.cleanarchgeekbrains.model.repository.RepositoryLocal
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import ui.smartpro.cleanarchgeekbrains.api.RetrofitModule
-import ui.smartpro.cleanarchgeekbrains.model.data.ResponseItem
+import ui.smartpro.repository.api.RetrofitModule
+import ui.smartpro.model.data.ResponseItem
 import ui.smartpro.cleanarchgeekbrains.model.datasource.RetrofitImplementation
 import ui.smartpro.cleanarchgeekbrains.model.datasource.RoomDataBaseImplementation
 import ui.smartpro.cleanarchgeekbrains.storage.Database
