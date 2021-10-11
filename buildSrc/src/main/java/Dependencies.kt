@@ -3,9 +3,9 @@ import org.gradle.api.JavaVersion
 object Config {
 //    const val kotlin_version = "1.4.21"
     const val application_id = "ui.smartpro.cleanarchgeekbrains"
-    const val compile_sdk = 30
+    const val compile_sdk = 31
     const val min_sdk = 21
-    const val target_sdk = 30
+    const val target_sdk = 31
     const val buildTools_version = "30.0.3"
     val java_version = JavaVersion.VERSION_1_8
     const val jvmTarget = "1.8"
@@ -32,6 +32,7 @@ object Versions {
     const val constraintLayout = "2.1.0"
     const val recyclerview = "1.1.0"
     const val legacy = "1.0.0"
+    const val splashscreen = "1.0.0-alpha02"
 
     //Kotlin
     const val core = "1.6.0"
@@ -87,6 +88,7 @@ object Design {
     const val constraintLayout =  "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
+    const val splashscreen = "androidx.core:core-splashscreen:${Versions.splashscreen}"
 }
 
 object Kotlin {

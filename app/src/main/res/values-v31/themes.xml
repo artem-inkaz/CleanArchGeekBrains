@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CleanArchGeekBrains2" parent="Theme.SplashScreen">
+        <item name="postSplashScreenTheme">@style/Theme.CleanArchGeekBrains</item>
+        <item name="android:windowSplashScreenBackground">#EDDA34</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_translate</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/colorAccent</item>
+<!--        <item name="android:windowSplashScreenBrandingImage">@drawable/ic_search</item>-->
+    </style>
+</resources>
