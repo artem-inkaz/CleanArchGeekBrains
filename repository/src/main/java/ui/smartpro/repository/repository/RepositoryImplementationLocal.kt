@@ -1,9 +1,9 @@
 package ui.smartpro.cleanarchgeekbrains.model.repository
 
-import ui.smartpro.model.data.AppState
-import ui.smartpro.model.data.ResponseItem
 import ui.smartpro.cleanarchgeekbrains.model.datasource.DataSourceLocal
 import ui.smartpro.cleanarchgeekbrains.storage.TranslationItem
+import ui.smartpro.model.data.AppState
+import ui.smartpro.model.data.ResponseItem
 
 class RepositoryImplementationLocal(private val dataSource: DataSourceLocal<List<ResponseItem>>) :
         RepositoryLocal<List<ResponseItem>> {

@@ -4,15 +4,16 @@ import ui.smartpro.model.data.AppState
 import ui.smartpro.model.data.PhoneticsItem
 import ui.smartpro.model.data.ResponseItem
 import ui.smartpro.cleanarchgeekbrains.storage.TranslationItem
-
+import ui.smartpro.utils.UnitTestable
+@UnitTestable
 fun parseOnlineSearchResults(appState: AppState): AppState {
     return AppState.Success(mapResult(appState, true))
 }
-
+@UnitTestable
 fun parseLocalSearchResults(appState: AppState): AppState {
     return AppState.Success(mapResult(appState, false))
 }
-
+@UnitTestable
 private fun mapResult(
         appState: AppState,
         isOnline: Boolean,
@@ -25,7 +26,7 @@ private fun mapResult(
     }
     return newSearchResults
 }
-
+@UnitTestable
 private fun getSuccessResultData(
         appState: AppState.Success,
         isOnline: Boolean,
@@ -44,7 +45,7 @@ private fun getSuccessResultData(
         }
     }
 }
-
+@UnitTestable
 private fun parseOnlineResult(dataModel: ResponseItem, newResponseItems: ArrayList<ResponseItem>) {
     if (!dataModel.word.isNullOrBlank() && !dataModel.phonetics.isNullOrEmpty()) {
         val newPhoneticsItems = arrayListOf<PhoneticsItem>()
@@ -58,7 +59,7 @@ private fun parseOnlineResult(dataModel: ResponseItem, newResponseItems: ArrayLi
         }
     }
 }
-
+@UnitTestable
 fun mapTranslationItemToSearchResult(list: List<TranslationItem>): List<ResponseItem> {
     val searchResult = ArrayList<ResponseItem>()
     if (!list.isNullOrEmpty()) {
@@ -68,7 +69,7 @@ fun mapTranslationItemToSearchResult(list: List<TranslationItem>): List<Response
     }
     return searchResult
 }
-
+@UnitTestable
 fun convertResponseItemSuccessToEntity(appState: AppState): TranslationItem? {
     return when (appState) {
         is AppState.Success -> {
@@ -83,7 +84,7 @@ fun convertResponseItemSuccessToEntity(appState: AppState): TranslationItem? {
     }
 
 }
-
+@UnitTestable
 fun convertPhoneticsItemToString(phonetics: List<PhoneticsItem>): String {
     var phoneticsSeparatedByComma = String()
     for ((index, meaning) in phonetics.withIndex()) {

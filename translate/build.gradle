@@ -73,6 +73,7 @@ dependencies {
 
     //Test
     testImplementation TestImpl.junit
+//    testImplementation TestImpl.assertj_core
     androidTestImplementation TestImpl.runner
     androidTestImplementation TestImpl.espresso
     implementation fileTree(dir: 'libs', include: ['*.jar'])

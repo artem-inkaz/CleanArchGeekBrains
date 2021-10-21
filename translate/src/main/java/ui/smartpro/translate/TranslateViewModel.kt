@@ -10,7 +10,9 @@ import ui.smartpro.core.common.BaseViewModel
 import ui.smartpro.model.data.AppState
 import ui.smartpro.cleanarchgeekbrains.storage.TranslationItem
 import ui.smartpro.cleanarchgeekbrains.utils.parseOnlineSearchResults
+import ui.smartpro.utils.UnitTestable
 
+@UnitTestable
 class TranslateViewModel(
         private val interactor: Interactor,
 ) : BaseViewModel<AppState, List<TranslationItem>>() {

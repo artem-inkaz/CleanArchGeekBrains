@@ -1,7 +1,7 @@
 package ui.smartpro.cleanarchgeekbrains.model.repository
 
-import ui.smartpro.model.data.ResponseItem
 import ui.smartpro.cleanarchgeekbrains.model.datasource.DataSource
+import ui.smartpro.model.data.ResponseItem
 
 class RepositoryImplementation(private val dataSource: DataSource<List<ResponseItem>>) :
         Repository<List<ResponseItem>> {

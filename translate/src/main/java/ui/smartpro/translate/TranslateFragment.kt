@@ -21,6 +21,7 @@ import ui.smartpro.cleanarchgeekbrains.utils.showsnackBar
 import ui.smartpro.core.common.BaseFragment
 import ui.smartpro.model.data.AppState
 import ui.smartpro.translate.R
+import ui.smartpro.translate.WordValidator
 import ui.smartpro.translate.databinding.FragmentTranslateBinding
 import ui.smartpro.utils.network.OnlineLiveData
 
@@ -31,6 +32,8 @@ class TranslateFragment : BaseFragment<AppState>() {
     private val vm: TranslateViewModel by currentScope.inject()
     private var items = listOf<TranslationItem>()
     private val translateAdapter = TranslateAdapter(items)
+
+    private val wordValidator = WordValidator()
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -47,10 +50,10 @@ class TranslateFragment : BaseFragment<AppState>() {
             adapter = translateAdapter
             addItemDecoration(MyItemDecoration())
         }
-        val originalText = viewBinding.etText.text
+        val originalText = viewBinding.etText.addTextChangedListener(wordValidator)
         viewBinding.ivSend.setOnClickListener {
             if (originalText.toString().trim().isNotEmpty()) {
-                Toast.makeText(context, originalText, Toast.LENGTH_SHORT)
+                Toast.makeText(context, originalText.toString(), Toast.LENGTH_SHORT)
                         .show()
                 vm.getData(originalText.toString().trim(), true)
 
@@ -106,10 +109,17 @@ class TranslateFragment : BaseFragment<AppState>() {
         })
     }
 
-    private fun showErrorScreen(error: String?) {
+    fun showErrorScreen(error: String?) {
         showViewError()
         Toast.makeText(context, getString(R.string.error) + error, Toast.LENGTH_LONG).show()
         vm.getData("error", true)
+    }
+
+    fun showErrorScreen1(error: String?): String? {
+        showViewError()
+        Toast.makeText(context, getString(R.string.error) + error, Toast.LENGTH_LONG).show()
+        vm.getData("error", true)
+        return error
     }
 
     private fun showViewLoading() {}

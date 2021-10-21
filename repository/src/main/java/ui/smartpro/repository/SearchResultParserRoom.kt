@@ -1,9 +1,9 @@
 package ui.smartpro.cleanarchgeekbrains.utils
 
+import ui.smartpro.cleanarchgeekbrains.storage.TranslationItem
 import ui.smartpro.model.data.AppState
 import ui.smartpro.model.data.PhoneticsItem
 import ui.smartpro.model.data.ResponseItem
-import ui.smartpro.cleanarchgeekbrains.storage.TranslationItem
 
 fun mapTranslationItemToSearchResult(list: List<TranslationItem>): List<ResponseItem> {
     val searchResult = ArrayList<ResponseItem>()
