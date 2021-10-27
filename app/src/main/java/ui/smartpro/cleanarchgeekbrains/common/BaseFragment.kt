@@ -3,9 +3,13 @@ package ui.smartpro.cleanarchgeekbrains.common
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import ui.smartpro.cleanarchgeekbrains.R
+import ui.smartpro.cleanarchgeekbrains.data.AppState
 
-abstract class BaseFragment<T : AppState, V : MvpView, P : MvpPresenter<T, V>> :
-    BaseMvpFragment<T, V, P>() {
+abstract class BaseFragment<T : AppState> : Fragment() {
+
+//    abstract val model: BaseViewModel<T>
+
+    abstract fun renderData(appState: T)
 
     fun replaceFragment(
         fragment: Fragment,

@@ -17,11 +17,15 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         handler.postDelayed({
             replaceActivity(MainActivity())
-        }, 1000)
+        }, DELAY_MILLS)
     }
 
     override fun onDestroy() {
         handler.removeCallbacksAndMessages(null)
         super.onDestroy()
+    }
+
+    companion object{
+        private const val DELAY_MILLS = 1000L
     }
 }

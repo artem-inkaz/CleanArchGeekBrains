@@ -1,6 +1,6 @@
 package ui.smartpro.cleanarchgeekbrains.common.cleanarch
 
-import ui.smartpro.cleanarchgeekbrains.common.AppState
+import ui.smartpro.cleanarchgeekbrains.data.AppState
 import ui.smartpro.cleanarchgeekbrains.common.MvpView
 
 //2

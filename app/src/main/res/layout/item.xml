@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/itemLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -10,49 +9,47 @@
         android:id="@+id/itemInputLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/margin_top_input_layout"
+        android:layout_marginLeft="@dimen/margin_left_input_layout"
+        android:layout_marginRight="@dimen/margin_right_input_layout"
+        android:layout_marginBottom="@dimen/margin_bottom_input_layout"
         android:background="@drawable/bg_orig"
-        android:paddingLeft="11dp"
-        android:paddingRight="19dp"
-        android:paddingBottom="8dp"
-        android:paddingTop="7dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="14dp"
-        android:elevation="4dp"
-        android:layout_gravity="right">
+        android:elevation="@dimen/elevation_layout"
+        android:paddingLeft="@dimen/padd_left_input_layout"
+        android:paddingTop="@dimen/padd_top_input_layout"
+        android:paddingRight="@dimen/padd_right_input_layout"
+        android:paddingBottom="@dimen/padd_bottom_input_layout">
+
         <TextView
             android:id="@+id/inputTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/input_text"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:text="Текст для перевода">
-        </TextView>
+            android:textSize="@dimen/text_size_input_output"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/itemOutputLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_output_layout"
+        android:layout_marginRight="@dimen/margin_right_output_layout"
+        android:layout_marginBottom="@dimen/margin_bottom_output_layout"
         android:background="@drawable/bg_translated"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginBottom="14dp"
-        android:elevation="4dp">
+        android:elevation="@dimen/elevation_layout"
+        android:paddingLeft="@dimen/padd_left_output_layout"
+        android:paddingTop="@dimen/padd_top_output_layout"
+        android:paddingRight="@dimen/padd_right_output_layout"
+        android:paddingBottom="@dimen/padd_bottom_output_layout">
+
         <TextView
             android:id="@+id/outputTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Результат перевода"
-            android:textSize="16sp"
-            android:textColor="?attr/colorText">
-
-        </TextView>
+            android:text="@string/output_text"
+            android:textColor="?attr/colorText"
+            android:textSize="@dimen/text_size_input_output"/>
     </LinearLayout>
-
-
 </LinearLayout>

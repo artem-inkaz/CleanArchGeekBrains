@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">CleanArchGeekBrains</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_word">Такого слова нет в словаре</string>
+    <string name="error_empty_field">Пожалуйста, заполните поле для ввода!</string>
+    <string name="input_text">Текст для перевода</string>
+    <string name="output_text">Результат перевода</string>
 </resources>
