@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/itemLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/itemInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_orig"
+        android:paddingLeft="11dp"
+        android:paddingRight="19dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="7dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="14dp"
+        android:elevation="4dp"
+        android:layout_gravity="right">
+        <TextView
+            android:id="@+id/inputTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="Текст для перевода">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/itemOutputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_translated"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="14dp"
+        android:elevation="4dp">
+        <TextView
+            android:id="@+id/outputTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Результат перевода"
+            android:textSize="16sp"
+            android:textColor="?attr/colorText">
+
+        </TextView>
+    </LinearLayout>
+
+
+</LinearLayout>

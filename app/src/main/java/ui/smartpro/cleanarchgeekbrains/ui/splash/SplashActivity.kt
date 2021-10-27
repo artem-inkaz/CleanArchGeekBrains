@@ -1,12 +1,12 @@
-package ui.smartpro.cleanarchgeekbrains.ui
+package ui.smartpro.cleanarchgeekbrains.ui.splash
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import ui.smartpro.cleanarchgeekbrains.MainActivity
+import androidx.appcompat.app.AppCompatActivity
 import ui.smartpro.cleanarchgeekbrains.R
+import ui.smartpro.cleanarchgeekbrains.ui.main.MainActivity
+import ui.smartpro.cleanarchgeekbrains.utils.replaceActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -15,10 +15,9 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-                handler.postDelayed({
-            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-            finish()
-        }, 5000)
+        handler.postDelayed({
+            replaceActivity(MainActivity())
+        }, 1000)
     }
 
     override fun onDestroy() {
