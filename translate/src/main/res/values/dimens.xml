@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_height">0dp</dimen>
+    <dimen name="min_height_edit_text">56dp</dimen>
+    <dimen name="padding_horizontal">16dp</dimen>
+    <dimen name="padding_vertical">10dp</dimen>
+    <dimen name="input_text_size">16sp</dimen>
+    <dimen name="base_width">0dp</dimen>
+    <dimen name="padd_horizontal_img">14dp</dimen>
+    <dimen name="padd_vertical_img">12dp</dimen>
+    <dimen name="base_margin">18dp</dimen>
+    <dimen name="padd_left_input_layout">11dp</dimen>
+    <dimen name="padd_right_input_layout">19dp</dimen>
+    <dimen name="padd_left_output_layout">15dp</dimen>
+    <dimen name="padd_right_output_layout">15dp</dimen>
+    <dimen name="padd_bottom_input_layout">8dp</dimen>
+    <dimen name="padd_top_input_layout">7dp</dimen>
+    <dimen name="padd_top_output_layout">5dp</dimen>
+    <dimen name="padd_bottom_output_layout">5dp</dimen>
+    <dimen name="margin_left_input_layout">39dp</dimen>
+    <dimen name="margin_right_input_layout">9dp</dimen>
+    <dimen name="margin_bottom_input_layout">14dp</dimen>
+    <dimen name="margin_left_output_layout">10dp</dimen>
+    <dimen name="margin_right_output_layout">38dp</dimen>
+    <dimen name="margin_bottom_output_layout">14dp</dimen>
+    <dimen name="elevation_layout">4dp</dimen>
+    <dimen name="text_size_input_output">16sp</dimen>
+    <dimen name="margin_top_input_layout">10dp</dimen>
+</resources>

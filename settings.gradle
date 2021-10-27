@@ -1,2 +1,7 @@
+include ':translate'
+include ':utils'
+include ':repository'
+include ':model'
+include ':core'
 include ':app'
 rootProject.name = "CleanArchGeekBrains"

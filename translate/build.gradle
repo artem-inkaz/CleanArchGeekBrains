@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    kotlinOptions {
+        jvmTarget = Config.jvmTarget
+    }
+}
+dependencies {
+    //Modules
+    implementation project(Modules.core)
+    implementation project(Modules.model)
+    implementation project(Modules.repository)
+    implementation project(Modules.utils)
+
+    //AndroidX
+    implementation Design.appcompat
+
+    //Design
+    implementation Design.material
+    implementation Design.constraintLayout
+    implementation Design.legacy
+
+    //RecyclerView
+    implementation Design.recyclerview
+
+    //Kotlin
+    implementation Kotlin.stdlib
+    implementation Kotlin.core
+    implementation Kotlin.coroutinesCore
+    implementation Kotlin.coroutinesAndroid
+    implementation Kotlin.liveData
+    implementation Kotlin.viewModel
+
+    //VieBinding
+    implementation ViewBinding.viewBinding
+
+    //koin
+    implementation Koin.koinAndroid
+    implementation Koin.koinViewModel
+    implementation Koin.koinScope
+
+    //Rx
+    implementation Rx.rxJava
+    implementation Rx.rxKotlin
+    implementation Rx.rxAndroid
+
+    //Retrofit
+    implementation Retrofit.loggingInterceptor
+    implementation Retrofit.retrofit
+    implementation Retrofit.converterGson
+    implementation Retrofit.adapterRxJava2
+    implementation Retrofit.serializationConverter
+    implementation Retrofit.adapterCoroutines
+
+    //Serialisation
+    implementation Serialisation.serializationJson
+    implementation Serialisation.googleGson
+
+    //Navigation
+    implementation Navigation.navigationFragment
+    implementation Navigation.navigationUi
+
+    //Room
+    kapt Room.compiler
+    implementation Room.runtime
+    implementation Room.room_ktx
+    implementation Room.room_rxjava
+
+    //Test
+    testImplementation TestImpl.junit
+    androidTestImplementation TestImpl.runner
+    androidTestImplementation TestImpl.espresso
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}

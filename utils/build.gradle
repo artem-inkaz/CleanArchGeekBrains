@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+dependencies {
+
+    implementation project(Modules.model)
+    implementation project(Modules.repository)
+
+    //AndroidX
+    implementation Design.appcompat
+
+    //Design
+    implementation Design.material
+    implementation Design.constraintLayout
+    implementation Design.legacy
+
+    //Navigation
+    implementation Navigation.navigationFragment
+    implementation Navigation.navigationUi
+
+    //Test
+    testImplementation TestImpl.junit
+    androidTestImplementation TestImpl.runner
+    androidTestImplementation TestImpl.espresso
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}

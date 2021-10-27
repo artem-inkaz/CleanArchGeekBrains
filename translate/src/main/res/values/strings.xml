@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_word">Такого слова нет в словаре</string>
+    <string name="error_empty_field">Пожалуйста, заполните поле для ввода!</string>
+    <string name="input_text">Текст для перевода</string>
+    <string name="output_text">Результат перевода</string>
+    <string name="date_success">Данные обработаны</string>
+    <string name="delete_from_favorites">Удалить из Избранных</string>
+    <string name="add_to_favorites">Добавить в Избранное</string>
+    <string name="copy">Копировать</string>
+    <string name="share">Поделиться</string>
+    <string name="delete">Удалить</string>
+    <string name="error">\"Ошибка \"</string>
+</resources>
