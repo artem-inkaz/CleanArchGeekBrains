@@ -54,6 +54,7 @@ dependencies {
     implementation Design.material
     implementation Design.constraintLayout
     implementation Design.legacy
+    implementation Design.splashscreen
 
     //RecyclerView
     implementation Design.recyclerview
