@@ -16,8 +16,8 @@ data class ResponseItem(
 	@field:SerializedName("word")
 	val word: String? = null,
 
-	@field:SerializedName("meanings")
-	val meanings: List<MeaningsItem?>? = null
+//	@field:SerializedName("meanings")
+//	val meanings: List<MeaningsItem?>? = null
 )
 
 data class DefinitionsItem(

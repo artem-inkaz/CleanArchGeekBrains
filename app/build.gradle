@@ -81,6 +81,10 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
+    // Coroutines, serialization
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+
     //Room
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-runtime:$room_version"

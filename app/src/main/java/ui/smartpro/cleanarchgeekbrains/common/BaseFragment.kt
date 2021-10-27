@@ -9,7 +9,7 @@ abstract class BaseFragment<T : AppState> : Fragment() {
 
 //    abstract val model: BaseViewModel<T>
 
-    abstract fun renderData(appState: T)
+    abstract fun renderData(Re: T)
 
     fun replaceFragment(
         fragment: Fragment,
