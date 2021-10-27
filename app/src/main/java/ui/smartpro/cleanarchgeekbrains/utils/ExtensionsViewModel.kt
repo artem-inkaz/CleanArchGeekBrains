@@ -1,8 +1,8 @@
 package ui.smartpro.cleanarchgeekbrains.utils
 
-import ui.smartpro.cleanarchgeekbrains.data.AppState
-import ui.smartpro.cleanarchgeekbrains.data.PhoneticsItem
-import ui.smartpro.cleanarchgeekbrains.data.ResponseItem
+import ui.smartpro.cleanarchgeekbrains.model.data.AppState
+import ui.smartpro.cleanarchgeekbrains.model.data.PhoneticsItem
+import ui.smartpro.cleanarchgeekbrains.model.data.ResponseItem
 
 fun parseSearchResults(data: AppState): AppState {
     val newSearchResults = arrayListOf<ResponseItem>()

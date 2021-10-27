@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="7dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alpha="0.05"
+        android:background="@drawable/bg_favorite"
+        android:backgroundTint="?attr/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_drag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_translated"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="?attr/colorAccent"
+        tools:text="Проверка"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/iv_delete"
+        app:layout_constraintStart_toEndOf="@id/iv_drag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/titleColor"
+        app:layout_constraintEnd_toEndOf="@id/tv_translated"
+        app:layout_constraintStart_toStartOf="@+id/tv_translated"
+        app:layout_constraintTop_toBottomOf="@id/tv_translated" />
+
+    <TextView
+        android:id="@+id/tv_orig"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:textColor="?attr/colorAccent"
+        tools:text="Проверка"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_translated"
+        app:layout_constraintStart_toStartOf="@id/tv_translated"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:alpha="0.6"
+        android:src="@drawable/ic_delete_from_fav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
