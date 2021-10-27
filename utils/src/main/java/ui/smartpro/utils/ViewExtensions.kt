@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import ui.smartpro.utils.R
 
 fun AppCompatActivity.replaceActivity(activity: AppCompatActivity) {
@@ -66,4 +67,8 @@ fun Fragment.showAlertDialog(title: String, message: String) {
             .setMessage(message)
             .setPositiveButton(R.string.ok) { dialog, _ -> dialog.cancel() }
             .show()
+}
+
+fun View.showsnackBar(message:String){
+    Snackbar.make(this,message, Snackbar.LENGTH_LONG).show()
 }

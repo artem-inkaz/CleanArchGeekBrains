@@ -12,19 +12,23 @@ import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
+import org.koin.androidx.scope.currentScope
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ui.smartpro.cleanarchgeekbrains.storage.TranslationItem
 import ui.smartpro.cleanarchgeekbrains.ui.translate.adapter.MyItemDecoration
 import ui.smartpro.cleanarchgeekbrains.ui.translate.adapter.TranslateAdapter
+import ui.smartpro.cleanarchgeekbrains.utils.showsnackBar
 import ui.smartpro.core.common.BaseFragment
 import ui.smartpro.model.data.AppState
 import ui.smartpro.translate.R
 import ui.smartpro.translate.databinding.FragmentTranslateBinding
+import ui.smartpro.utils.network.OnlineLiveData
 
 class TranslateFragment : BaseFragment<AppState>() {
 
     private val viewBinding: FragmentTranslateBinding by viewBinding()
-    private val vm by viewModel<TranslateViewModel>()
+//    private val vm by viewModel<TranslateViewModel>()
+    private val vm: TranslateViewModel by currentScope.inject()
     private var items = listOf<TranslationItem>()
     private val translateAdapter = TranslateAdapter(items)
     override fun onCreateView(
