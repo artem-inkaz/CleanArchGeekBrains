@@ -81,6 +81,7 @@ object Versions {
     const val jUnit = "4.13.2"
     const val runner = "1.1.3"
     const val espressoCore = "3.4.0"
+    const val assertj_core = "3.21.0"
 }
 object Design {
     const val appcompat =  "androidx.appcompat:appcompat:${Versions.appcompat}"
@@ -145,5 +146,6 @@ object Room {
 object TestImpl {
     const val junit = "junit:junit:${Versions.jUnit}"
     const val runner = "androidx.test:runner:${Versions.runner}"
+    const val assertj_core = "org.assertj:assertj-core:${Versions.assertj_core}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
 }
